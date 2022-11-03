@@ -1,9 +1,23 @@
 package com.school.schoolManagement.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "school")
 public class School {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "schoolid")
 	private int schoolId;
+	@Column(name = "schoolname")
 	private String schoolName;
+	@Column(name = "location")
 	private String location;
 	public int getSchoolId() {
 		return schoolId;
